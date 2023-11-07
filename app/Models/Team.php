@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function monickerName()
+    {
+        return $this->color . ' ' . $this->name;
+    }
+
+    public function candidates()
+    {
+        return $this->hasMany(Candidate::class);
+    }
 }

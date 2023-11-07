@@ -1,0 +1,41 @@
+<div>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-100 leading-tight">
+            {{ __('Candidates') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @livewire('candidates.create');
+            <div class="overflow-x-auto relative rounded-lg border border-gray-600">
+                <table class="w-full text-sm text-left">
+                    <thead class="text-xs uppercase bg-gray-700 border-b border-gray-600 text-gray-100">
+                        <tr>
+                            <th scope="col" class="py-3 px-6">Name</th>
+                            <th scope="col" class="py-3 px-6">Number</th>
+                            <th scope="col" class="py-3 px-6">Team</th>
+                            <th scope="col" class="py-3 px-6">Gender</th>
+                            <th scope="col" class="py-3 px-6"> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach($candidates as $candidate)
+                            <tr class="bg-gray-700 border-b border-gray-600">
+                                <th scope="row" class="py-4 px-6 text-gray-50 flex items-center">
+                                    <img class="h-12 mr-2" src="{{ asset('storage/candidates/' . $candidate->photo) }}" alt="">
+                                    {{ $candidate->fullName() }}
+                                </th>
+                                <td class="py-4 px-6 text-gray-200">{{ $candidate->number }}</td>
+                                <td class="py-4 px-6 text-gray-200">{{ $candidate->team->monickerName() }}</td>
+                                <td class="py-4 px-6 text-gray-200">{{ $candidate->gender }}</td>
+                                <td class="py-4 px-6 text-gray-200">Edit</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

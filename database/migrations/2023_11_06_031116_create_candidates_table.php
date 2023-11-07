@@ -14,11 +14,12 @@ return new class extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Team::class)->constrained();
+            $table->foreignIdFor(Team::class)->constrained()->onDelete('cascade');
             $table->integer('number');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('gender');
+            $table->string('photo');
             $table->timestamps();
         });
     }
