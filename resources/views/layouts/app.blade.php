@@ -14,6 +14,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-800">
@@ -33,8 +36,10 @@
                 {{ $slot }}
             </main>
             @if(session()->has('message'))
-    <div x-data="{ toast: true}" class="absolute top-16 right-5">
-        <div x-show="toast"
+    <div x-data="{ toast: true}" class="fixed top-16 right-5">
+        <div
+        x-show="toast"
+        x-init="setTimeout(() => toast = false, 3000)"
         x-transition:enter="ease-out duration-300"
         x-transition:enter-start="translate-x-0 opacity-0"
         x-transition:enter-end="opacity-100 translate-x-5"
@@ -55,5 +60,6 @@
     </div>
     @endif
         </div>
+        @livewireScripts
     </body>
 </html>
