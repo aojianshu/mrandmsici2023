@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('populars', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Candidate::class)->constrained();
-            $table->foreignIdFor(Judge::class)->constrained();
             $table->decimal('score', 5, 2);
             $table->timestamps();
         });

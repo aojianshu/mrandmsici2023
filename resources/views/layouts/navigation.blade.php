@@ -5,11 +5,12 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('event') }}">
                         <x-application-logo class="block h-12 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
+                @if(Auth::user()->admin == 1)
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -18,13 +19,14 @@
                     <x-nav-link :href="route('teams')" :active="request()->routeIs('teams')">
                         {{ __('Teams') }}
                     </x-nav-link>
-                    <x-nav-link :href="'/'">
+                    <x-nav-link :href="route('judges')" :active="request()->routeIs('judges')">
                         {{ __('Judges') }}
                     </x-nav-link>
                     <x-nav-link :href="route('candidates')" :active="request()->routeIs('candidates')">
                         {{ __('Candidates') }}
                     </x-nav-link>
                 </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
