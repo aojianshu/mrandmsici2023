@@ -28,12 +28,17 @@ class Judge extends Model
 
     public function sports()
     {
-        return $this->hasMany(Sports::class);
+        return $this->hasMany(Sport::class);
     }
 
     public function uniforms()
     {
         return $this->hasMany(Uniform::class);
+    }
+
+    public function formals()
+    {
+        return $this->hasMany(Formal::class);
     }
 
     public function user()

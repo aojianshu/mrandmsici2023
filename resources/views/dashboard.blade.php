@@ -62,32 +62,22 @@
                     </nav>
                     <div class="p-4 rounded-lg bg-gray-700">
                         <div x-show="tab === 'total'" x-transition>
-                            <div>
-                                <span>Total Scores</span>
-                            </div>
+                            @livewire('total')
                         </div>
                         <div x-show="tab === 'production'" x-transition>
                             @livewire('production.index')
                         </div>
                         <div x-show="tab === 'uniform'" x-transition>
-                            <div>
-                                <span>Uniform Attire Scores</span>
-                            </div>
+                            @livewire('uniform.index')
                         </div>
                         <div x-show="tab === 'sports'" x-transition>
-                            <div>
-                                <span>Sports Attire Scores</span>
-                            </div>
+                            @livewire('sport.index')
                         </div>
                         <div x-show="tab === 'formal'" x-transition>
-                            <div>
-                                <span>Formal Wear Scores</span>
-                            </div>
+                            @livewire('formal.index')
                         </div>
                         <div x-show="tab === 'q&a'" x-transition>
-                            <div>
-                                <span>Question & Answers Scores</span>
-                            </div>
+                            @livewire('question.index')
                         </div>
                     </div>
                 </div>

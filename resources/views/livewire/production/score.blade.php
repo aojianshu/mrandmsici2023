@@ -84,7 +84,7 @@
                     <div class="mt-2">
                         <div class="mb-4">
                             <label class="block uppercase text-xs font-bold mb-2" for="score">Score</label>
-                            <x-text-input required class="w-full appearance-none" wire:model="score" id="score" type="number" name="score" :value="old('score')" autofocus autocomplete="score" ></x-text-input>
+                            <x-text-input required class="w-full appearance-none" wire:model="score" id="score" type="text" name="score" :value="old('score')" autofocus autocomplete="score" ></x-text-input>
                             @error('score') <span class="text-red-400 text-xs font-bold">{{ $message }}</span> @enderror
                         </div>
                     </div>
@@ -92,11 +92,23 @@
                 </div>
               </div>
               <div class="bg-gray-700 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                <x-primary-button class="sm:ml-3">Submit Score</x-primary-button>
+                <x-primary-button class="sm:ml-3" wire:loading.attr="disabled">
+                  Submit Score
+                  <div wire:loading>
+                    <?xml version="1.0" ?><svg class="feather feather-loader h-5 w-5 animate-spin ml-2" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="2" y2="6"/><line x1="12" x2="12" y1="18" y2="22"/><line x1="4.93" x2="7.76" y1="4.93" y2="7.76"/><line x1="16.24" x2="19.07" y1="16.24" y2="19.07"/><line x1="2" x2="6" y1="12" y2="12"/><line x1="18" x2="22" y1="12" y2="12"/><line x1="4.93" x2="7.76" y1="19.07" y2="16.24"/><line x1="16.24" x2="19.07" y1="7.76" y2="4.93"/></svg>
+                  </div>
+                </x-primary-button>
                 <x-secondary-button @click="openModal = !openModal">Cancel</x-secondary-button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      @if($loading)
+      <div class="fixed inset-0 w-full h-screen z-50 bg-gray-900 bg-opacity-75">
+        <div class="w-full h-screen bg-gray-900 bg-opacity-75 text-gray-100 flex items-center content-center justify-center">
+          <p class="">Submitting ...</p>
+        </div>
+      </div>
+      @endif
 </div>

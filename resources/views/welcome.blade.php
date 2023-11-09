@@ -31,7 +31,7 @@
                 <div class="min-h-screen flex flex-col sm:justify-center items-center bg-gray-800 w-2/6">
                     <div>
                         <a href="/">
-                            <x-application-logo class="w-24 fill-current text-gray-500 mb-2" />
+                            <x-application-logo class="w-48 fill-current text-gray-500 mb-2" />
                         </a>
                     </div>
 
@@ -84,7 +84,7 @@
                 </div>
             {{-- </div> --}}
             <div class="w-4/6 bg-white h-screen">
-                <img class="object-cover object-bottom h-screen w-full" src="{{ asset('assets/logos/LOGO_Gold.png') }}" alt="">
+                <img class="object-cover object-center h-screen w-full" src="{{ asset('assets/images/Tabulation Cover Photo.jpg') }}" alt="">
             </div>
         </div>
     </body>

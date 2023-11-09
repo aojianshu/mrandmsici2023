@@ -28,12 +28,12 @@ class Candidate extends Model
 
     public function photogenics()
     {
-        return $this->hasMany(Photogenic::class);
+        return $this->hasOne(Photogenic::class);
     }
 
     public function populars()
     {
-        return $this->hasMany(Popular::class);
+        return $this->hasOne(Popular::class);
     }
 
     public function productions()

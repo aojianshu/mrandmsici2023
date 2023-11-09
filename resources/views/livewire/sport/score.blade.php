@@ -7,10 +7,10 @@
           Sports
         </div>
         @if(Auth::user()->admin != 1)
-          @if(!$candidate->sports->where('judge_id', Auth::user()->id)->isEmpty())
+          @if(!$candidate->sports->where('judge_id', Auth::user()->judge->id)->isEmpty())
           <div>
             <span class="bg-gray-700 text-gray-200 rounded-full py-1 px-2">
-              {{ $candidate->sports->where('judge_id', Auth::user()->id)->first()->score }}
+              {{ $candidate->sports->where('judge_id', Auth::user()->judge->id)->first()->score }}
             </span>
           </div>
           @endif

@@ -1,7 +1,7 @@
 <div>
-    {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
+    {{-- Care about people's approval and you will be their prisoner. --}}
     <div class="overflow-x-auto relative">
-        <h1>Production Scores</h1>
+        <h1>Question and Answer Scores</h1>
         <h1>Female</h1>
         <table role="table" class="w-full text-sm text-left text-gray-400">
             <thead class="text-xs text-gray-400 uppercase bg-gray-900">
@@ -32,8 +32,8 @@
                     </th>
                     @foreach($judges as $judge)
                     <td class="py-4 px-6">
-                        @if(!empty($judge->productions->where('candidate_id', $candidate->id)->first()))
-                            {{ $judge->productions->where('candidate_id', $candidate->id)->first()->score }}
+                        @if(!empty($judge->questions->where('candidate_id', $candidate->id)->first()))
+                            {{ $judge->questions->where('candidate_id', $candidate->id)->first()->score }}
                         @else
                             <span class="text-red-400">0</span>
                         @endif
@@ -77,8 +77,8 @@
                     </th>
                     @foreach($judges as $judge)
                     <td class="py-4 px-6">
-                        @if(!empty($judge->productions->where('candidate_id', $candidate->id)->first()))
-                            {{ $judge->productions->where('candidate_id', $candidate->id)->first()->score }}
+                        @if(!empty($judge->questions->where('candidate_id', $candidate->id)->first()))
+                            {{ $judge->questions->where('candidate_id', $candidate->id)->first()->score }}
                         @else
                             <span class="text-red-400">0</span>
                         @endif

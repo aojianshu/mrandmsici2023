@@ -9,6 +9,8 @@ use Livewire\Component;
 
 class Score extends Component
 {
+    public $loading = false;
+
     public $candidate;
 
     #[Rule('required|numeric|between:75,100')]
@@ -28,7 +30,10 @@ class Score extends Component
             ['score' => $input['score']],
         );
 
+
         session()->flash('message', 'Score candidate ' . $this->candidate->number . ' - ' . $this->candidate->fullName() . ' in Production Number category successfully.');
-        return $this->redirect('/event', navigate: true);
+        $this->loading = true;
+        // return $this->redirect('/event', navigate: true);
+        return redirect()->to('event');
     }
 }

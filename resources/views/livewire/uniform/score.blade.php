@@ -7,10 +7,10 @@
           Uniform Attire
         </div>
         @if(Auth::user()->admin != 1)
-          @if(!$candidate->uniforms->where('judge_id', Auth::user()->id)->isEmpty())
+          @if(!$candidate->uniforms->where('judge_id', Auth::user()->judge->id)->isEmpty())
           <div>
             <span class="bg-gray-700 text-gray-200 rounded-full py-1 px-2">
-              {{ $candidate->uniforms->where('judge_id', Auth::user()->id)->first()->score }}
+              {{ $candidate->uniforms->where('judge_id', Auth::user()->judge->id)->first()->score }}
             </span>
           </div>
           @endif
