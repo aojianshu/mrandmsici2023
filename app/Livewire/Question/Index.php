@@ -20,7 +20,7 @@ class Index extends Component
 
     public function render()
     {
-        $scores = DB::table('formals')->selectRaw('candidate_id, avg(score) as score')->groupBy('candidate_id');
+        $scores = DB::table('questions')->selectRaw('candidate_id, avg(score) as score')->groupBy('candidate_id');
 
         return view('livewire.question.index', [
             'judges' => Judge::all(),

@@ -10,13 +10,13 @@
                             Candidate Name
                         </button>
                     </th>
-                    <th scope="col" class="py-3 px-6">People's Choice</th>
-                    <th scope="col" class="py-3 px-6">Photogenic</th>
-                    <th scope="col" class="py-3 px-6">Production</th>
-                    <th scope="col" class="py-3 px-6">Uniform</th>
-                    <th scope="col" class="py-3 px-6">Sports</th>
-                    <th scope="col" class="py-3 px-6">Formal</th>
-                    <th scope="col" class="py-3 px-6">Q&A</th>
+                    <th scope="col" class="py-3 px-6">People's Choice (5%)</th>
+                    <th scope="col" class="py-3 px-6">Photogenic (5%)</th>
+                    <th scope="col" class="py-3 px-6">Production (10%)</th>
+                    <th scope="col" class="py-3 px-6">Uniform (15%)</th>
+                    <th scope="col" class="py-3 px-6">Sports (15%)</th>
+                    <th scope="col" class="py-3 px-6">Formal (20%)</th>
+                    <th scope="col" class="py-3 px-6">Q&A (30%)</th>
                     <th scope="col" class="py-3 px-6">
                         <button class="uppercase" wire:click="sortBy('score')">
                             Average
@@ -36,11 +36,12 @@
                         </td>
                         <td class="py-4 px-6">
                             {{ is_null($candidate->photogenics) ? '0' : $candidate->photogenics->score }}
-                        <td class="py-4 px-6">{{ $candidate->productions->avg('score') * .10 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->uniforms->avg('score') * .15 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->sports->avg('score') * .15 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->formals->avg('score') * .20 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->questions->avg('score') * .30 }}</td>
+                        </td>
+                        <td class="py-4 px-6">{{ $candidate->productions->avg('score') . ' (' . $candidate->productions->avg('score') * .10 .')' }}</td>
+                        <td class="py-4 px-6">{{ $candidate->uniforms->avg('score') . ' (' . $candidate->uniforms->avg('score') * .15 .')' }}</td>
+                        <td class="py-4 px-6">{{ $candidate->sports->avg('score') . ' (' . $candidate->sports->avg('score') * .15 .')'  }}</td>
+                        <td class="py-4 px-6">{{ $candidate->formals->avg('score') . ' (' . $candidate->formals->avg('score') * .20 .')'  }}</td>
+                        <td class="py-4 px-6">{{ $candidate->questions->avg('score') . ' (' . $candidate->questions->avg('score') * .30 .')'  }}</td>
                         <td class="py-4 px-6 font-bold text-gray-300">
                             {{ round($candidate->score, 3) }}
                         </td>
@@ -58,13 +59,13 @@
                             Candidate Name
                         </button>
                     </th>
-                    <th scope="col" class="py-3 px-6">People's Choice</th>
-                    <th scope="col" class="py-3 px-6">Photogenic</th>
-                    <th scope="col" class="py-3 px-6">Production</th>
-                    <th scope="col" class="py-3 px-6">Uniform</th>
-                    <th scope="col" class="py-3 px-6">Sports</th>
-                    <th scope="col" class="py-3 px-6">Formal</th>
-                    <th scope="col" class="py-3 px-6">Q&A</th>
+                    <th scope="col" class="py-3 px-6">People's Choice (5%)</th>
+                    <th scope="col" class="py-3 px-6">Photogenic (5%)</th>
+                    <th scope="col" class="py-3 px-6">Production (10%)</th>
+                    <th scope="col" class="py-3 px-6">Uniform (15%)</th>
+                    <th scope="col" class="py-3 px-6">Sports (15%)</th>
+                    <th scope="col" class="py-3 px-6">Formal (20%)</th>
+                    <th scope="col" class="py-3 px-6">Q&A (30%)</th>
                     <th scope="col" class="py-3 px-6">
                         <button class="uppercase" wire:click="sortBy('score')">
                             Average
@@ -84,11 +85,12 @@
                         </td>
                         <td class="py-4 px-6">
                             {{ is_null($candidate->photogenics) ? '0' : $candidate->photogenics->score }}
-                        <td class="py-4 px-6">{{ $candidate->productions->avg('score') * .10 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->uniforms->avg('score') * .15 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->sports->avg('score') * .15 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->formals->avg('score') * .20 }}</td>
-                        <td class="py-4 px-6">{{ $candidate->questions->avg('score') * .30 }}</td>
+                        </td>
+                        <td class="py-4 px-6">{{ $candidate->productions->avg('score') . ' (' . $candidate->productions->avg('score') * .10 .')' }}</td>
+                        <td class="py-4 px-6">{{ $candidate->uniforms->avg('score') . ' (' . $candidate->uniforms->avg('score') * .15 .')' }}</td>
+                        <td class="py-4 px-6">{{ $candidate->sports->avg('score') . ' (' . $candidate->sports->avg('score') * .15 .')'  }}</td>
+                        <td class="py-4 px-6">{{ $candidate->formals->avg('score') . ' (' . $candidate->formals->avg('score') * .20  .')'  }}</td>
+                        <td class="py-4 px-6">{{ $candidate->questions->avg('score') . ' (' . $candidate->questions->avg('score') * .30 .')'  }}</td>
                         <td class="py-4 px-6 font-bold text-gray-300">
                             {{ round($candidate->score, 3) }}
                         </td>

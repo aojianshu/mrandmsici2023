@@ -44,7 +44,7 @@ CREATE TABLE `candidates` (
 
 LOCK TABLES `candidates` WRITE;
 /*!40000 ALTER TABLE `candidates` DISABLE KEYS */;
-INSERT INTO `candidates` VALUES (1,15,1,'Genevieve Alexandra','Escarda','Female','Escarda.jpg','2023-11-06 23:18:28','2023-11-06 23:18:28'),(2,19,2,'Heavenly Grace','Cailing','Female','Cailing.jpg','2023-11-06 23:21:06','2023-11-06 23:21:06'),(3,14,3,'Jillian Niña','Castillo','Female','Jillian Niña.jpg','2023-11-06 23:21:38','2023-11-06 23:21:38'),(4,18,4,'Meagan','Balaba','Female','Balaba.jpg','2023-11-06 23:22:59','2023-11-06 23:22:59'),(5,20,5,'Claire Marie','Cemine','Female','Cemine.jpg','2023-11-06 23:23:40','2023-11-06 23:23:40'),(6,16,6,'Rebecca Louise','Hablo','Female','Hablo.jpg','2023-11-06 23:24:05','2023-11-06 23:24:05'),(7,17,7,'Danica Mae','Labis','Female','Labis.jpg','2023-11-06 23:24:34','2023-11-06 23:24:34'),(8,15,1,'Kert','Vistal','Male','Vistal.jpg','2023-11-06 23:24:54','2023-11-06 23:24:54'),(9,19,2,'Kurt Delan','Cañete','Male','Cañete.jpg','2023-11-06 23:25:28','2023-11-06 23:25:28'),(10,14,3,'Jhon Gil','Bacus','Male','Bacus.jpg','2023-11-06 23:25:53','2023-11-06 23:25:53'),(11,18,4,'Davy Jones','Kehek','Male','Kehek.jpg','2023-11-06 23:26:13','2023-11-06 23:26:13'),(12,20,5,'Klint','Peralta','Male','Peralta.jpg','2023-11-06 23:26:35','2023-11-06 23:26:35'),(13,16,6,'Chester Anthony','Payao','Male','Payao.jpg','2023-11-06 23:26:59','2023-11-06 23:26:59'),(14,17,7,'Jon Charles','Sambalod','Male','Sambalod.jpg','2023-11-06 23:27:27','2023-11-06 23:27:27');
+INSERT INTO `candidates` VALUES (1,2,1,'Genevieve Alexandra','Escarda','Female','Escarda.jpg','2023-11-07 22:33:56','2023-11-07 22:33:56'),(2,4,2,'Heavenly Grace','Cailing','Female','Cailing.jpg','2023-11-07 22:34:29','2023-11-07 22:34:29'),(3,1,3,'Jillian Niña','Castillo','Female','Castillo.jpg','2023-11-07 22:34:51','2023-11-07 22:34:51'),(4,5,4,'Meagan','Balaba','Female','Balaba.jpg','2023-11-07 22:35:12','2023-11-07 22:35:12'),(5,7,5,'Claire Marie','Cemine','Female','Cemine.jpg','2023-11-07 22:35:46','2023-11-07 22:35:46'),(6,3,6,'Rebecca Louis','Hablo','Female','Hablo.jpg','2023-11-07 22:36:14','2023-11-07 22:36:14'),(7,6,7,'Danica Mae','Labis','Female','Labis.jpg','2023-11-07 22:36:47','2023-11-07 22:36:47'),(8,2,1,'Kert','Vistal','Male','Vistal.jpg','2023-11-07 22:37:13','2023-11-07 22:37:13'),(9,4,2,'Kurt','Delan','Male','Delan.jpg','2023-11-07 22:37:34','2023-11-07 22:37:34'),(10,1,3,'Jhon Gil','Bacus','Male','Bacus.jpg','2023-11-07 22:37:52','2023-11-07 22:37:52'),(11,5,4,'Davy Jones','Kehek','Male','Kehek.jpg','2023-11-07 22:38:12','2023-11-07 22:38:12'),(12,7,5,'Klint','Peralta','Male','Peralta.jpg','2023-11-07 22:38:34','2023-11-07 22:38:34'),(13,3,6,'Chester Anthony','Payao','Male','Payao.jpg','2023-11-07 22:38:59','2023-11-07 22:38:59'),(14,6,7,'Jon Charles','Sambalod','Male','Sambalod.jpg','2023-11-07 22:39:22','2023-11-07 22:39:22');
 /*!40000 ALTER TABLE `candidates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `judges` (
   PRIMARY KEY (`id`),
   KEY `judges_user_id_foreign` (`user_id`),
   CONSTRAINT `judges_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,6 +134,7 @@ CREATE TABLE `judges` (
 
 LOCK TABLES `judges` WRITE;
 /*!40000 ALTER TABLE `judges` DISABLE KEYS */;
+INSERT INTO `judges` VALUES (6,7,'Kyanna Zyra','Awitin','2023-11-13 18:01:35','2023-11-13 18:01:35'),(7,8,'Kayleigh','Nambatac','2023-11-13 18:01:55','2023-11-13 18:01:55'),(8,9,'Jean Berger','Peritos','2023-11-13 18:02:08','2023-11-13 18:02:08'),(9,10,'Elson James','Baconguis Jr','2023-11-13 18:02:27','2023-11-13 18:02:27'),(10,11,'Elimar','Jamisola','2023-11-13 18:02:43','2023-11-13 18:02:43');
 /*!40000 ALTER TABLE `judges` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +150,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +159,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (53,'2014_10_12_000000_create_users_table',1),(54,'2014_10_12_100000_create_password_reset_tokens_table',1),(55,'2019_08_19_000000_create_failed_jobs_table',1),(56,'2019_12_14_000001_create_personal_access_tokens_table',1),(57,'2023_11_06_031107_create_teams_table',1),(58,'2023_11_06_031116_create_candidates_table',1),(59,'2023_11_06_031139_create_judges_table',1),(60,'2023_11_06_031221_create_uniforms_table',1),(61,'2023_11_06_031235_create_productions_table',1),(62,'2023_11_06_031243_create_sports_table',1),(63,'2023_11_06_031255_create_formals_table',1),(64,'2023_11_06_031402_create_questions_table',1),(65,'2023_11_06_031440_create_populars_table',1),(66,'2023_11_06_031454_create_photogenics_table',1);
+INSERT INTO `migrations` VALUES (67,'2014_10_12_000000_create_users_table',1),(68,'2014_10_12_100000_create_password_reset_tokens_table',1),(69,'2019_08_19_000000_create_failed_jobs_table',1),(70,'2019_12_14_000001_create_personal_access_tokens_table',1),(71,'2023_11_06_031107_create_teams_table',1),(72,'2023_11_06_031116_create_candidates_table',1),(73,'2023_11_06_031139_create_judges_table',1),(74,'2023_11_06_031221_create_uniforms_table',1),(75,'2023_11_06_031235_create_productions_table',1),(76,'2023_11_06_031243_create_sports_table',1),(77,'2023_11_06_031255_create_formals_table',1),(78,'2023_11_06_031402_create_questions_table',1),(79,'2023_11_06_031440_create_populars_table',1),(80,'2023_11_06_031454_create_photogenics_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,16 +230,13 @@ DROP TABLE IF EXISTS `photogenics`;
 CREATE TABLE `photogenics` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `candidate_id` bigint unsigned NOT NULL,
-  `judge_id` bigint unsigned NOT NULL,
   `score` decimal(5,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `photogenics_candidate_id_foreign` (`candidate_id`),
-  KEY `photogenics_judge_id_foreign` (`judge_id`),
-  CONSTRAINT `photogenics_candidate_id_foreign` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`),
-  CONSTRAINT `photogenics_judge_id_foreign` FOREIGN KEY (`judge_id`) REFERENCES `judges` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `photogenics_candidate_id_foreign` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,6 +245,7 @@ CREATE TABLE `photogenics` (
 
 LOCK TABLES `photogenics` WRITE;
 /*!40000 ALTER TABLE `photogenics` DISABLE KEYS */;
+INSERT INTO `photogenics` VALUES (1,1,2.50,NULL,NULL),(2,2,4.00,NULL,NULL),(3,3,4.50,NULL,NULL),(4,4,3.00,NULL,NULL),(5,5,5.00,NULL,NULL),(6,6,3.50,NULL,NULL),(7,7,2.00,NULL,NULL),(8,8,4.00,NULL,NULL),(9,9,2.50,NULL,NULL),(10,10,5.00,NULL,NULL),(11,11,4.50,NULL,NULL),(12,12,3.50,NULL,NULL),(13,13,3.00,NULL,NULL),(14,14,2.00,NULL,NULL);
 /*!40000 ALTER TABLE `photogenics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,15 +259,12 @@ DROP TABLE IF EXISTS `populars`;
 CREATE TABLE `populars` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `candidate_id` bigint unsigned NOT NULL,
-  `judge_id` bigint unsigned NOT NULL,
   `score` decimal(5,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `populars_candidate_id_foreign` (`candidate_id`),
-  KEY `populars_judge_id_foreign` (`judge_id`),
-  CONSTRAINT `populars_candidate_id_foreign` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`),
-  CONSTRAINT `populars_judge_id_foreign` FOREIGN KEY (`judge_id`) REFERENCES `judges` (`id`)
+  CONSTRAINT `populars_candidate_id_foreign` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -389,7 +385,7 @@ CREATE TABLE `teams` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,7 +394,7 @@ CREATE TABLE `teams` (
 
 LOCK TABLES `teams` WRITE;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` VALUES (14,'Green','Wolves','Green-Wolves.png','2023-11-06 23:03:10','2023-11-06 23:03:10'),(15,'Red','Hawks','Red-Hawks.png','2023-11-06 23:03:22','2023-11-06 23:03:22'),(16,'Orange','Tigers','Orange-Tigers.png','2023-11-06 23:03:34','2023-11-06 23:03:34'),(17,'Yellow','Hornets','Yellow-Hornets.png','2023-11-06 23:03:50','2023-11-06 23:03:50'),(18,'Purple','Panthers','Purple-Panthers.png','2023-11-06 23:04:02','2023-11-06 23:04:02'),(19,'Blue','Sharks','Blue-Sharks.png','2023-11-06 23:04:15','2023-11-06 23:04:15'),(20,'Pink','Vipers','Pink-Vipers.png','2023-11-06 23:04:38','2023-11-06 23:04:38');
+INSERT INTO `teams` VALUES (1,'Green','Wolves','Green-Wolves.png','2023-11-07 22:24:06','2023-11-07 22:24:06'),(2,'Red','Hawks','Red-Hawks.png','2023-11-07 22:24:19','2023-11-07 22:24:19'),(3,'Orange','Tigers','Orange-Tigers.png','2023-11-07 22:24:33','2023-11-07 22:24:33'),(4,'Blue','Sharks','Blue-Sharks.png','2023-11-07 22:24:54','2023-11-07 22:24:54'),(5,'Purple','Panthers','Purple-Panthers.png','2023-11-07 22:25:12','2023-11-07 22:25:12'),(6,'Yellow','Hornets','Yellow-Hornets.png','2023-11-07 22:25:30','2023-11-07 22:25:30'),(7,'Pink','Vipers','Pink-Vipers.png','2023-11-07 22:25:51','2023-11-07 22:25:51');
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -449,7 +445,7 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -458,7 +454,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','$2y$12$UCA/13zYsU877OxGZudYeekBo/BuasewA9VJkGlDFxw318C.RyOj.',1,NULL,'2023-11-06 22:33:05','2023-11-06 22:33:05');
+INSERT INTO `users` VALUES (1,'admin','$2y$12$LqTqmZGANGr0XlC1qzPFheuK.AEyxh87C5jaRBp7YU6ot3S2B87KC',1,NULL,'2023-11-07 22:20:47','2023-11-07 22:20:47'),(7,'kyannazyra','$2y$12$BuubAPmOEaocHxl7mRf4aet/OjQXvpso85.qM6BPeZh8hKgMa9ie.',0,NULL,'2023-11-13 18:01:35','2023-11-13 18:01:35'),(8,'kayleigh','$2y$12$OC.lTHAiK7QdeMUfaeYs4u9.E35Fno0NFKb25OBlelBDSyZ2YrwnO',0,NULL,'2023-11-13 18:01:55','2023-11-13 18:01:55'),(9,'jeanberger','$2y$12$omYiSSCsIgj/zWTv9E36A.b/8scuYVHDHDKLK7AcC0C6sF2O2bddC',0,NULL,'2023-11-13 18:02:08','2023-11-13 18:02:08'),(10,'elsonjames','$2y$12$m65lFssxDkp1jFLMle7SQOfbdSyfC/N.EnDQ7AqZBjZWPUbnJIr5q',0,NULL,'2023-11-13 18:02:27','2023-11-13 18:02:27'),(11,'elimar','$2y$12$IpZbUPuCQMBeWeOOwfO/f.FF1OTmOmQnpUhVXjAzrwzok07/8Y.bm',0,NULL,'2023-11-13 18:02:43','2023-11-13 18:02:43');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -471,4 +467,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-07 15:46:34
+-- Dump completed on 2023-11-14 10:06:35
