@@ -265,7 +265,7 @@ CREATE TABLE `populars` (
   PRIMARY KEY (`id`),
   KEY `populars_candidate_id_foreign` (`candidate_id`),
   CONSTRAINT `populars_candidate_id_foreign` FOREIGN KEY (`candidate_id`) REFERENCES `candidates` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,6 +274,7 @@ CREATE TABLE `populars` (
 
 LOCK TABLES `populars` WRITE;
 /*!40000 ALTER TABLE `populars` DISABLE KEYS */;
+INSERT INTO `populars` VALUES (1,1,2.50,NULL,NULL),(2,2,5.00,NULL,NULL),(3,3,3.50,NULL,NULL),(4,4,4.00,NULL,NULL),(5,5,3.00,NULL,NULL),(6,6,4.50,NULL,NULL),(7,7,2.00,NULL,NULL),(8,8,2.00,NULL,NULL),(9,9,4.00,NULL,NULL),(10,10,5.00,NULL,NULL),(11,11,4.50,NULL,NULL),(12,12,3.50,NULL,NULL),(13,13,3.00,NULL,NULL),(14,14,2.50,NULL,NULL);
 /*!40000 ALTER TABLE `populars` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -467,4 +468,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-14 10:06:35
+-- Dump completed on 2023-11-20  8:22:39
